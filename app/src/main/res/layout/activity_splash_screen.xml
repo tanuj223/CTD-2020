@@ -9,9 +9,9 @@
    <LinearLayout
        android:layout_width="match_parent"
        android:layout_height="match_parent"
-       android:background="#000000">
-   <com.felipecsl.gifimageview.library.GifImageView
-       android:layout_width="match_parent"
+       android:background="@color/colorAccent">
+<com.felipecsl.gifimageview.library.GifImageView
+      android:layout_width="match_parent"
        android:layout_height="match_parent"
        android:id="@+id/gif"/>
    </LinearLayout>

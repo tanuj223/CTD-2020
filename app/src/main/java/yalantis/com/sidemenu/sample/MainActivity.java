@@ -24,6 +24,8 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.text.SpannableStringBuilder;
+import android.text.style.TypefaceSpan;
 import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.Menu;
@@ -57,6 +59,7 @@ import yalantis.com.sidemenu.sample.fragment.BugFragment;
 import yalantis.com.sidemenu.sample.fragment.ContactUsFragment;
 import yalantis.com.sidemenu.sample.fragment.FaqsFragment;
 import yalantis.com.sidemenu.sample.fragment.HomeFragment;
+import yalantis.com.sidemenu.sample.fragment.SponsersFragment;
 import yalantis.com.sidemenu.util.ViewAnimator;
 
 import static android.graphics.Color.TRANSPARENT;
@@ -110,6 +113,7 @@ public class MainActivity extends AppCompatActivity implements ViewAnimator.View
     ContactUsFragment contactUsFragment;
     BugFragment bugFragment;
     FaqsFragment faqsFragment;
+    SponsersFragment sponsersFragment;
     private ScrollView scrollView1;
     Resourceble slideMenuItem;
     ScreenShotable screenShotable;
@@ -207,7 +211,7 @@ public class MainActivity extends AppCompatActivity implements ViewAnimator.View
 
         static final String logTag = "ActivitySwipeDetector";
         private Activity activity;
-        static final int MIN_DISTANCE = 100;// TODO change this runtime based on screen resolution. for 1920x1080 is to small the 100 distance
+        static final int MIN_DISTANCE = 0;// TODO change this runtime based on screen resolution. for 1920x1080 is to small the 100 distance
         private float downX, downY, upX, upY;
 
         // private MainActivity mMainActivity;
@@ -349,15 +353,7 @@ public class MainActivity extends AppCompatActivity implements ViewAnimator.View
             animator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
                 @Override
                 public void onAnimationUpdate(ValueAnimator animation) {
-                   /* fabstatus=1;
-                    if(nm.equals(HomeFragment.HOME) || nm.equals("CLOSE"))
-                        getSupportFragmentManager().beginTransaction().remove(homeFragment).commit();
-                    if(nm.equals(ContactUsFragment.CONTACTUS)|| nm.equals("CLOSE"))
-                        getSupportFragmentManager().beginTransaction().remove(contactUsFragment).commit();
-                    if(nm.equals(BugFragment.BUG)|| nm.equals("CLOSE"))
-                        getSupportFragmentManager().beginTransaction().remove(bugFragment).commit();
-                    if(nm.equals(FaqsFragment.FAQS)|| nm.equals("CLOSE"))
-                        getSupportFragmentManager().beginTransaction().remove(faqsFragment).commit();*/
+
                     float v = (float) animation.getAnimatedValue();
 
                     mBinding.fab.setX(
@@ -465,6 +461,8 @@ public class MainActivity extends AppCompatActivity implements ViewAnimator.View
                         getSupportFragmentManager().beginTransaction().remove(bugFragment).commit();
                     if(nm.equals(FaqsFragment.FAQS)|| nm.equals("CLOSE"))
                         getSupportFragmentManager().beginTransaction().remove(faqsFragment).commit();
+                    if(nm.equals(SponsersFragment.SP)|| nm.equals("CLOSE"))
+                        getSupportFragmentManager().beginTransaction().remove(sponsersFragment).commit();
                     revealFilterSheet(y);
                 }
             });
@@ -544,7 +542,7 @@ public class MainActivity extends AppCompatActivity implements ViewAnimator.View
         int x,y;
         x = title.getLeft();
         y = nccTitle.getTop();
-        hsv.scrollTo(x, y);
+        hsv.smoothScrollTo(x, y);
         y=title.getBaseline();
         x=scrollView1.getRight();
         scrollView1.smoothScrollTo(x,y);
@@ -563,7 +561,7 @@ public class MainActivity extends AppCompatActivity implements ViewAnimator.View
         name2.setText("Rushikesh Deshpande");
         num2.setText(getText(R.string.rushikesh_no));
         Date.setText("Date: ");
-        Dat.setText("11th March, 2020\n");
+        Dat.setText("12th March, 2020\n");
         Regf.setText("Registration Fee: ");
         Reg.setText("Participate in a team of two.\n" +"IEEE Members: ₹80/-\n" +"Non-IEEE Members: ₹100/-\n");
         Cont.setText("Contact: ");
@@ -592,7 +590,7 @@ public class MainActivity extends AppCompatActivity implements ViewAnimator.View
         x = nccTitle.getRight();
         int c=inq.getLeft();
         y = nth_tv.getTop();
-        hsv.scrollTo(x, y);
+        hsv.smoothScrollTo(x, y);
         y=title.getBaseline();
         x=scrollView1.getRight();
         scrollView1.smoothScrollTo(x,y);
@@ -641,7 +639,7 @@ public class MainActivity extends AppCompatActivity implements ViewAnimator.View
         x = nth_tv.getRight();
         y = inq.getTop();
         int c=nth_tv.getRight();
-        hsv.scrollTo(x, y);
+        hsv.smoothScrollTo(x, y);
         y=title.getBaseline();
         x=scrollView1.getRight();
         scrollView1.smoothScrollTo(x,y);
@@ -690,7 +688,7 @@ public class MainActivity extends AppCompatActivity implements ViewAnimator.View
         int x, y;
         x = inq.getRight();
         y = unr.getTop();
-        hsv.scrollTo(x, y);
+        hsv.smoothScrollTo(x, y);
         y=title.getBaseline();
         x=scrollView1.getRight();
         scrollView1.smoothScrollTo(x,y);
@@ -713,7 +711,7 @@ public class MainActivity extends AppCompatActivity implements ViewAnimator.View
         num1.setText(getText(R.string.sreya_no));
         name2.setText("Nishita Pali");
         num2.setText(getText(R.string.nishita_no));
-        Dat.setText("12th March, 2020\n");
+        Dat.setText("17th March, 2020\n");
         Regf.setText("Registration Fee: ");
         Reg.setText("Participate in a team of two.\n" +"IEEE Members: ₹30/-\n" +"Non-IEEE Members: ₹50/-\n");
         Cont.setText("Contact: ");
@@ -774,6 +772,9 @@ public class MainActivity extends AppCompatActivity implements ViewAnimator.View
         else
         if(nm.equals(FaqsFragment.FAQS))
             getSupportFragmentManager().beginTransaction().replace(R.id.content_frame, faqsFragment).commit();
+        else
+        if(nm.equals(SponsersFragment.SP))
+            getSupportFragmentManager().beginTransaction().replace(R.id.content_frame, sponsersFragment).commit();
         fabstatus=0;
         mBinding.fab.setVisibility(VISIBLE);
         mBinding.list.setVisibility(INVISIBLE);
@@ -1104,12 +1105,14 @@ public class MainActivity extends AppCompatActivity implements ViewAnimator.View
         list.add(menuItem3);
         SlideMenuItem menuItem4 = new SlideMenuItem(FaqsFragment.FAQS, R.drawable.ic_question_answer_black_24dp, "FAQs");
         list.add(menuItem4);
-        SlideMenuItem menuItem5 = new SlideMenuItem("Website", R.drawable.ic_web_black_24dp, "Website");
+        SlideMenuItem menuItem5 = new SlideMenuItem(SponsersFragment.SP, R.drawable.ic_monetization_on_black_24dp, "Sponsers");
         list.add(menuItem5);
-        SlideMenuItem menuItem6 = new SlideMenuItem("Share", R.drawable.ic_share_black_24dp, "Share");
+        SlideMenuItem menuItem6 = new SlideMenuItem("Website", R.drawable.ic_web_black_24dp, "Website");
         list.add(menuItem6);
-        SlideMenuItem menuItem7 = new SlideMenuItem("Feedback", R.drawable.ic_feedback_black_24dp, "Feedback");
+        SlideMenuItem menuItem7 = new SlideMenuItem("Share", R.drawable.ic_share_black_24dp, "Share");
         list.add(menuItem7);
+        SlideMenuItem menuItem8 = new SlideMenuItem("Feedback", R.drawable.ic_feedback_black_24dp, "Feedback");
+        list.add(menuItem8);
 
 
     }
@@ -1166,7 +1169,15 @@ public class MainActivity extends AppCompatActivity implements ViewAnimator.View
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.menu_main, menu);
+        //Typeface face = Typeface.createFromAsset(this.getAssets(),"fonts/notosans.ttf");    //  THIS
+        TypefaceSpan face = new TypefaceSpan("@font/notosans"); // OR  THIS
+        SpannableStringBuilder title = new SpannableStringBuilder(this.getString(R.string.action_settings));
+        title.setSpan(face, 0, title.length(), 0);
+       // menu.add(Menu.NONE, R.id.action_settings, 0, title); // THIS
+        MenuItem menuItem = menu.findItem(R.id.action_settings); // OR THIS
+        menuItem.setTitle(title);
         return true;
+
     }
 
     @Override
@@ -1266,6 +1277,25 @@ public class MainActivity extends AppCompatActivity implements ViewAnimator.View
                 }
                 else
                     return screenShotable;
+            case SponsersFragment.SP:
+                if(!(nm.equals(SponsersFragment.SP))) {
+                    this.res = this.res == R.drawable.content_music ? R.drawable.content_films : R.drawable.content_music;
+                    View view4 = findViewById(R.id.content_frame);
+                    int finalRadius4 = Math.max(view4.getWidth(), view4.getHeight());
+                    Animator animator4 = ViewAnimationUtils.createCircularReveal(view4, 0, position, 0, finalRadius4);
+                    animator4.setInterpolator(new AccelerateInterpolator());
+                    animator4.setDuration(ViewAnimator.CIRCULAR_REVEAL_ANIMATION_DURATION);
+
+                    findViewById(R.id.content_overlay).setBackground(new BitmapDrawable(getResources(), screenShotable.getBitmap()));
+                    animator4.start();
+                    sponsersFragment = SponsersFragment.newInstance(this.res);
+                    getSupportFragmentManager().beginTransaction().replace(R.id.content_frame, sponsersFragment).commit();
+                    nm=SponsersFragment.SP;
+                    return sponsersFragment;
+                }
+                else
+                    return screenShotable;
+
             case "Website":
                 Uri web=Uri.parse("http://ctd.pictieee.in/");
                 Intent intent=new Intent(Intent.ACTION_VIEW, web);

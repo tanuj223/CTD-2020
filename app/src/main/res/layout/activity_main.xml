@@ -218,7 +218,7 @@
                         android:layout_marginRight="10dp"
                         android:fontFamily="@font/notosans"
                         android:textColor="#FFFFFF"
-                        android:text="11th March, 2020\n"
+                        android:text="12th March, 2020\n"
                         android:textSize="20dp"
                         android:justificationMode="inter_word"/>
                 </LinearLayout>

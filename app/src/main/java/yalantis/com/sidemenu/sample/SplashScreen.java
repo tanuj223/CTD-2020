@@ -9,11 +9,13 @@ import android.view.Window;
 import android.view.WindowManager;
 
 import com.felipecsl.gifimageview.library.GifImageView;
-
-import org.apache.commons.io.IOUtils;
+import com.google.android.gms.common.util.IOUtils;
 
 import java.io.IOException;
 import java.io.InputStream;
+
+
+
 
 public class SplashScreen extends AppCompatActivity {
 
