@@ -1103,18 +1103,16 @@ public class MainActivity extends AppCompatActivity implements ViewAnimator.View
         list.add(menuItem2);
         SlideMenuItem menuItem3 = new SlideMenuItem(BugFragment.BUG, R.drawable.ic_bug_report_black_24dp, "Developers");
         list.add(menuItem3);
-        SlideMenuItem menuItem4 = new SlideMenuItem(BugFragment.BUG, R.drawable.ic_people_black_24dp, "Seminars");
+        SlideMenuItem menuItem4 = new SlideMenuItem(FaqsFragment.FAQS, R.drawable.ic_question_answer_black_24dp, "FAQs");
         list.add(menuItem4);
-        SlideMenuItem menuItem5 = new SlideMenuItem(FaqsFragment.FAQS, R.drawable.ic_question_answer_black_24dp, "FAQs");
+        SlideMenuItem menuItem5 = new SlideMenuItem(SponsersFragment.SP, R.drawable.ic_monetization_on_black_24dp, "Sponsers");
         list.add(menuItem5);
-        SlideMenuItem menuItem6 = new SlideMenuItem(SponsersFragment.SP, R.drawable.ic_monetization_on_black_24dp, "Sponsers");
+        SlideMenuItem menuItem6 = new SlideMenuItem("Website", R.drawable.ic_web_black_24dp, "Website");
         list.add(menuItem6);
-        SlideMenuItem menuItem7 = new SlideMenuItem("Website", R.drawable.ic_web_black_24dp, "Website");
+        SlideMenuItem menuItem7 = new SlideMenuItem("Share", R.drawable.ic_share_black_24dp, "Share");
         list.add(menuItem7);
-        SlideMenuItem menuItem8 = new SlideMenuItem("Share", R.drawable.ic_share_black_24dp, "Share");
+        SlideMenuItem menuItem8 = new SlideMenuItem("Feedback", R.drawable.ic_feedback_black_24dp, "Feedback");
         list.add(menuItem8);
-        SlideMenuItem menuItem9 = new SlideMenuItem("Feedback", R.drawable.ic_feedback_black_24dp, "Feedback");
-        list.add(menuItem9);
 
 
     }
