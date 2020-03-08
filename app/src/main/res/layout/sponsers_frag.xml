@@ -16,6 +16,147 @@
             android:layout_height="fill_parent"
             android:visibility="gone">
 
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+                <TextView
+                    android:id="@+id/logo"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textAlignment="center"
+                    android:background="@drawable/grad"
+                    android:fontFamily="@font/notosans"
+                    android:text="Sponsers"
+                    android:textColor="#FFFFFF"
+                    android:textStyle="bold"
+                    android:textSize="40dp"
+                    android:padding="20dp"/>
+                <TextView
+                    android:paddingTop="30dp"
+                    android:textColor="#FFFFFF"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textAlignment="center"
+                    android:fontFamily="@font/notosans"
+                    android:textSize="30dp"
+                    android:text="Title Sponser"/>
+                <ImageView
+                    android:background="@drawable/shape"
+                    android:paddingTop="20dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:src="@drawable/finiq2"/>
+                <TextView
+                    android:paddingTop="30dp"
+                    android:textColor="#FFFFFF"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textAlignment="center"
+                    android:fontFamily="@font/notosans"
+                    android:text="Co-Sponsers"
+                    android:textSize="30dp"/>
+
+                    <ImageView
+                        android:paddingTop="20dp"
+                        android:layout_gravity="center"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/byju"/>
+                    <ImageView
+                        android:paddingTop="20dp"
+                        android:layout_gravity="center"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/interviewmocha"/>
+                <TextView
+                    android:paddingTop="30dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="#FFFFFF"
+                    android:textAlignment="center"
+                    android:fontFamily="@font/notosans"
+                    android:text="Educational Partners"
+                    android:textSize="30dp"/>
+
+                    <ImageView
+                        android:paddingTop="20dp"
+                        android:layout_gravity="center"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/collegepond2"/>
+                    <ImageView
+                        android:paddingTop="20dp"
+                        android:layout_gravity="center"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ims2"/>
+                <TextView
+                    android:paddingTop="30dp"
+                    android:textColor="#FFFFFF"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textAlignment="center"
+                    android:fontFamily="@font/notosans"
+                    android:text="Study-Abroad Partner"
+                    android:textSize="30dp"/>
+                <ImageView
+                    android:paddingTop="20dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:src="@drawable/aarnell"/>
+                <TextView
+                    android:paddingTop="30dp"
+                    android:layout_width="match_parent"
+                    android:textColor="#FFFFFF"
+                    android:layout_height="wrap_content"
+                    android:textAlignment="center"
+                    android:fontFamily="@font/notosans"
+                    android:text="Visionary Partner"
+                    android:textSize="30dp"/>
+                <ImageView
+                    android:paddingTop="20dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:src="@drawable/ml_india"/>
+                <TextView
+                    android:paddingTop="30dp"
+                    android:layout_width="match_parent"
+                    android:textColor="#FFFFFF"
+                    android:layout_height="wrap_content"
+                    android:textAlignment="center"
+                    android:fontFamily="@font/notosans"
+                    android:text="Energy Partner"
+                    android:textSize="30dp"/>
+                <ImageView
+                    android:paddingTop="20dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:src="@drawable/m"/>
+                <TextView
+                    android:paddingTop="30dp"
+                    android:layout_width="match_parent"
+                    android:textColor="#FFFFFF"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/notosans"
+                    android:textAlignment="center"
+                    android:textSize="30dp"
+                    android:text="Programming Partner"/>
+                <ImageView
+                    android:paddingTop="20dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:src="@drawable/codechef"
+                    android:paddingBottom="30dp"/>
+
+
+            </LinearLayout>
+
 
         </ScrollView>
 
